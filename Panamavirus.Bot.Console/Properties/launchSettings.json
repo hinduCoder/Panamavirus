@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Panamavirus.Bot.Console": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
