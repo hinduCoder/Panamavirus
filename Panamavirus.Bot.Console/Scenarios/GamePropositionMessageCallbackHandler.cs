@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
+using Telegram.Bot.Types.Enums;
 
 namespace Panamavirus.Bot.Console.Scenarios
 {
@@ -24,6 +25,8 @@ namespace Panamavirus.Bot.Console.Scenarios
         public async Task HandleCallbackQuery(CallbackQuery callbackQuery)
         {
             var userFrom = callbackQuery.From;
+            var userFullName = $"{userFrom.FirstName} {userFrom.LastName}";
+
             var originalMessageId = callbackQuery.Message.MessageId;
             if (callbackQuery.Data == CallbackButtonDataContants.OptIn)
             {
@@ -35,9 +38,11 @@ namespace Panamavirus.Bot.Console.Scenarios
                     {
                         UserId = userFrom.Id,
                         MessageId = originalMessageId,
-                        UserName = $"{userFrom.FirstName} {userFrom.LastName}"
+                        UserName = userFullName
                     });
                     _botContext.SaveChanges();
+
+                    await SendRegisteredNotification(callbackQuery.Message, userFullName);
                 }
             }
             if (callbackQuery.Data == CallbackButtonDataContants.OptOut)
@@ -47,6 +52,8 @@ namespace Panamavirus.Bot.Console.Scenarios
                 {
                     _botContext.Participance.Remove(p);
                     _botContext.SaveChanges();
+
+                    await SendChangedMindNotification(callbackQuery.Message, userFullName);
                 }
 
             }
@@ -66,6 +73,15 @@ namespace Panamavirus.Bot.Console.Scenarios
                         InlineKeyboardButton.WithCallbackData("Я в деле", CallbackButtonDataContants.OptIn),
                         InlineKeyboardButton.WithCallbackData("Я передумал", CallbackButtonDataContants.OptOut)
                     });
+        }
+
+        private async Task SendRegisteredNotification(Message callMessage, string name) => await Reply(callMessage, $"*{name}* записался на игру");
+
+        private async Task SendChangedMindNotification(Message callMessage, string name) => await Reply(callMessage, $"*{name}* передумал играть");
+
+        private async Task Reply(Message callMessage, string message)
+        {
+            await _telegram.SendTextMessageAsync(callMessage.Chat, message, ParseMode.MarkdownV2, replyToMessageId: callMessage.MessageId);
         }
     }
 }

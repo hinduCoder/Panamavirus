@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Panamavirus\Panamavirus.Bot.Console\Panamavirus.Bot.Console.csproj" />
+    <ProjectReference Include="..\Panamavirus.Bot.Console\Panamavirus.Bot.Console.csproj" />
   </ItemGroup>
 
 </Project>
