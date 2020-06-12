@@ -5,7 +5,7 @@ namespace Panamavirus.Bot.Console.Telegram
 {
     public interface IMessageHandler
     {
-        bool CanHandleMessage(Message message);
+        bool HandlesThis(Message message);
         Task HandleMessage(Message message);
     }
 }

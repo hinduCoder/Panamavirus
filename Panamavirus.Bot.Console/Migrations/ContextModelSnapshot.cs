@@ -7,7 +7,7 @@ using Panamavirus.Bot.Console;
 
 namespace Panamavirus.Bot.Console.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(BotContext))]
     partial class ContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

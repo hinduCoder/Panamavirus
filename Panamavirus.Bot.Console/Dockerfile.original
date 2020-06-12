@@ -5,10 +5,9 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Panamavirus.Bot.Console/Panamavirus.Bot.Console.csproj", "Panamavirus.Bot.Console/"]
+COPY ["Panamavirus.Bot.Console.csproj", "Panamavirus.Bot.Console/"]
 RUN dotnet restore "Panamavirus.Bot.Console/Panamavirus.Bot.Console.csproj"
 COPY . .
-WORKDIR "/src/Panamavirus.Bot.Console"
 RUN dotnet build "Panamavirus.Bot.Console.csproj" -c Release -o /app/build
 
 FROM build AS publish

@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Panamavirus.Bot.Console", "Panamavirus.Bot.Console\Panamavirus.Bot.Console.csproj", "{68CA8C52-BA8F-4BEF-AA47-EA8340631ABA}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{06C874B3-EF3C-4778-B3B2-B43813DE07EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panamavirus.Bot.Tests", "..\Panamavirus.Bot.Tests\Panamavirus.Bot.Tests.csproj", "{3E32065E-B088-4C34-A5CF-466C70698A75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Panamavirus.Hangfire.Dashboard", "Panamavirus.Hangfire.Dashboard\Panamavirus.Hangfire.Dashboard.csproj", "{DB41D40F-CBB4-4ACB-9776-A60472FB1293}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{68CA8C52-BA8F-4BEF-AA47-EA8340631ABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68CA8C52-BA8F-4BEF-AA47-EA8340631ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68CA8C52-BA8F-4BEF-AA47-EA8340631ABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C874B3-EF3C-4778-B3B2-B43813DE07EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C874B3-EF3C-4778-B3B2-B43813DE07EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C874B3-EF3C-4778-B3B2-B43813DE07EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C874B3-EF3C-4778-B3B2-B43813DE07EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E32065E-B088-4C34-A5CF-466C70698A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E32065E-B088-4C34-A5CF-466C70698A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E32065E-B088-4C34-A5CF-466C70698A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E32065E-B088-4C34-A5CF-466C70698A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB41D40F-CBB4-4ACB-9776-A60472FB1293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB41D40F-CBB4-4ACB-9776-A60472FB1293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB41D40F-CBB4-4ACB-9776-A60472FB1293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB41D40F-CBB4-4ACB-9776-A60472FB1293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

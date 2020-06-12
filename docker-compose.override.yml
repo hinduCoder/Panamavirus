@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  panamavirus.bot.console:
+
+  panamavirus.hangfire.dashboard:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+

@@ -5,7 +5,7 @@ namespace Panamavirus.Bot.Console.Telegram
 {
 	public interface ICallbackQueryHandler
 	{
-		bool CanHandleCallbackQuery(ICallbackQueryHandler callbackQuery);
+		bool HandlesThis(CallbackQuery callbackQuery);
 		Task HandleCallbackQuery(CallbackQuery callbackQuery);
 	}
 }

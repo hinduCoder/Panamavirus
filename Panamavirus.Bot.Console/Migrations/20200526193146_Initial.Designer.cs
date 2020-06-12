@@ -8,7 +8,7 @@ using Panamavirus.Bot.Console;
 
 namespace Panamavirus.Bot.Console.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(BotContext))]
     [Migration("20200526193146_Initial")]
     partial class Initial
     {

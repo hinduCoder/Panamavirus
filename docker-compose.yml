@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres
+    environment:
+        POSTGRES_PASSWORD: npgsqlpasswd
+    restart: always
+  panamavirus.bot.console:
+    image: hinducoder/panamavirus
+    build:
+      context: .
+      dockerfile: Panamavirus.Bot.Console/Dockerfile
+    depends_on:
+      - db
+    restart: always
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    restart: always
+  panamavirus.hangfire.dashboard:
+    image: hinducoder/panamavirus-hangfire-dashboard
+    build:
+      context: .
+      dockerfile: Panamavirus.Hangfire.Dashboard/Dockerfile
+    ports:
+      - 15000:80
+    depends_on:
+      - db
+    restart: always
