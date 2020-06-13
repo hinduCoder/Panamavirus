@@ -135,7 +135,6 @@ namespace Panamavirus.Bot.Console
 
             GlobalConfiguration.Configuration.UsePostgreSqlStorage(container.Resolve<IConfiguration>().GetValue<string>("db:connectionString"));
 
-            RecurringJob.RemoveIfExists("Program.SendProposition"); //TODO remove
             var server = new BackgroundJobServer();
             logger.Information("Hangfire server started");
             var tasks = container.Resolve<IEnumerable<IScheduledTask>>();

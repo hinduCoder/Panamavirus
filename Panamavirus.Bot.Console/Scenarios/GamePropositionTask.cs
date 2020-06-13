@@ -12,7 +12,7 @@ namespace Panamavirus.Bot.Console.Scenarios
         private readonly BotContext _botContext;
         private readonly ITelegramBotClient _telegram;
 
-        public string Cron => Hangfire.Cron.Daily(10);
+        public string Cron => Hangfire.Cron.Daily(7);
 
         public string Code => "game-proposition";
 
